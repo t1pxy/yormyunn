@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "1st-Pouf",
-  description: "1st-Pouf's links, projects, and everything else, in one place.",
+  title: "YormYunn Family's",
+  description: "YormYunn Family's",
 };
 
 const themeInitScript = `
