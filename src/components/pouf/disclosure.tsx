@@ -6,7 +6,7 @@ import { buttonClasses } from './Button'
 import { useState, type ReactNode } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Icon } from './Icon'
-import { toneClass, type Tone } from './tone'
+import { type Tone } from './tone'
 
 /* ------------------------------------------------------------------ */
 /* Tabs                                                                */
@@ -49,7 +49,16 @@ export function Tabs({ tabs, value, onChange, tone = 'blue' }: TabsProps) {
         {tabs.map(
           (t) =>
             t.value === value && (
-              <RTabs.Content key={t.value} value={t.value} className="pouf-tabs__content" forceMount render={<motion.div initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }} transition={{ duration: reduceMotion ? 0.01 : 0.18, ease: 'easeOut' }} />}>{t.content}</RTabs.Content>
+              <RTabs.Content key={t.value} value={t.value} className="pouf-tabs__content" forceMount asChild>
+                <motion.div
+                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                  transition={{ duration: reduceMotion ? 0.01 : 0.18, ease: 'easeOut' }}
+                >
+                  {t.content}
+                </motion.div>
+              </RTabs.Content>
             ),
         )}
       </AnimatePresence>
@@ -124,7 +133,11 @@ export function Collapsible({ children, trigger, open: controlledOpen, onOpenCha
 
   return (
     <RCollapse.Root open={open} onOpenChange={setOpen}>
-      <RCollapse.Trigger render={<button type="button" className="pouf-collapsible__trigger" />}>{trigger}</RCollapse.Trigger>
+      <RCollapse.Trigger asChild>
+        <button type="button" className="pouf-collapsible__trigger">
+          {trigger}
+        </button>
+      </RCollapse.Trigger>
       <RCollapse.Content className="pouf-collapsible__content" forceMount>
         <motion.div
           initial={false}

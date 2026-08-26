@@ -13,6 +13,9 @@ export function ThemeToggle() {
   const [dark, setDark] = useState(false)
 
   useEffect(() => {
+    // Reads the class set by the inline script in layout.tsx before hydration,
+    // so state can never diverge from the actual DOM without a page reload.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDark(document.documentElement.classList.contains('dark'))
   }, [])
 
