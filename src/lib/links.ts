@@ -13,11 +13,11 @@ export const profile = {
 export const socials: { icon: IconName; label: string; url: string }[] = [
   { icon: 'music', label: 'TikTok', url: 'https://www.tiktok.com/@yormyunnfam' },
   { icon: 'photo', label: 'Instagram', url: 'https://www.instagram.com/yormyunn/' },
-  { icon: 'card', label: 'Donate / X', url: 'https://x.com' },
+  { icon: 'card', label: 'Donate', url: 'https://ezdn.app/yormyunn' },
 ]
 
 export const links: { label: string; url: string; icon: IconName; tone: Tone }[] = [
   { label: 'TikTok', url: 'https://www.tiktok.com/@yormyunnfam', icon: 'music', tone: 'purple' },
   { label: 'Instagram', url: 'https://www.instagram.com/yormyunn/', icon: 'photo', tone: 'pink' },
-  { label: 'Donate', url: 'https://example.com/donate', icon: 'card', tone: 'orange' },
+  { label: 'Donate Live Stream', url: 'https://ezdn.app/yormyunn', icon: 'card', tone: 'orange' },
 ]
