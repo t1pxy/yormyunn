@@ -54,21 +54,6 @@ export default function Home() {
                 {profile.bio}
               </p>
             </motion.div>
-            <motion.div variants={item} className="flex gap-3 pt-2">
-              {socials.map((s, i) => (
-                <motion.div key={s.label} whileHover={{ scale: 1.12, rotate: [-2, 2, 0] }} whileTap={{ scale: 0.92 }}>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    aria-label={s.label}
-                    style={{ color: SOCIAL_TONES[i % SOCIAL_TONES.length] }}
-                    onClick={() => window.open(s.url, '_blank', 'noopener,noreferrer')}
-                  >
-                    <Icon name={s.icon} size="sm" />
-                  </Button>
-                </motion.div>
-              ))}
-            </motion.div>
           </CardHeader>
 
           <CardContent className="flex flex-col gap-5 pt-4 pb-2">
